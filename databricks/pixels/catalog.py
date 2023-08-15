@@ -27,8 +27,10 @@ class Catalog:
         except NoCredentialsError as e:
           print('error', e, "correcting")
           anon=True
+      else:
+        anon=False
     
-        return anon
+      return anon
 
     def __init__(self, spark, table:str = "hive_metastore.pixels_solacc.object_catalog"):
       """Catalog objects and files, collect metadata and thumbnails. The catalog can be used with multiple object types.
